@@ -1,0 +1,33 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--ui-radius-full);
+  font-family: var(--ui-font-sans);
+  font-size: var(--ui-font-size-xs);
+  font-weight: 650;
+  line-height: 1.4;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.neutral {
+  background: var(--ui-color-surface-muted);
+  color: var(--ui-color-text);
+}
+
+.success {
+  background: color-mix(in srgb, var(--ui-color-success) 18%, white);
+  color: var(--ui-color-success);
+}
+
+.warning {
+  background: color-mix(in srgb, var(--ui-color-warning) 18%, white);
+  color: var(--ui-color-warning);
+}
+
+.danger {
+  background: color-mix(in srgb, var(--ui-color-danger) 16%, white);
+  color: var(--ui-color-danger);
+}

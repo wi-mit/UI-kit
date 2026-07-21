@@ -1,0 +1,50 @@
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-lg);
+  background: var(--ui-color-surface);
+}
+
+.root {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ui-font-sans);
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text);
+}
+
+.caption {
+  padding: var(--ui-space-3) var(--ui-space-4);
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--ui-color-border);
+}
+
+.root th,
+.root td {
+  padding: var(--ui-space-3) var(--ui-space-4);
+  border-bottom: 1px solid var(--ui-color-border);
+  vertical-align: middle;
+}
+
+.root thead th {
+  background: var(--ui-color-surface-muted);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.root tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.root tbody tr:hover td {
+  background: var(--ui-color-surface-hover);
+}
+
+.empty {
+  text-align: center;
+  color: var(--ui-color-text-muted);
+  padding: var(--ui-space-8) var(--ui-space-4);
+}

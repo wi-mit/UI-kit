@@ -1,0 +1,40 @@
+:root {
+  --ui-color-primary: #0f766e;
+  --ui-color-primary-hover: #0d9488;
+  --ui-color-primary-fg: #ffffff;
+  --ui-color-danger: #b42318;
+  --ui-color-danger-hover: #912018;
+  --ui-color-danger-fg: #ffffff;
+  --ui-color-success: #067647;
+  --ui-color-warning: #b54708;
+  --ui-color-text: #111827;
+  --ui-color-text-muted: #6b7280;
+  --ui-color-border: #e5e7eb;
+  --ui-color-surface: #ffffff;
+  --ui-color-surface-muted: #f9fafb;
+  --ui-color-surface-hover: #f3f4f6;
+  --ui-color-focus: #14b8a6;
+
+  --ui-space-1: 0.25rem;
+  --ui-space-2: 0.5rem;
+  --ui-space-3: 0.75rem;
+  --ui-space-4: 1rem;
+  --ui-space-5: 1.25rem;
+  --ui-space-8: 2rem;
+
+  --ui-radius-md: 0.5rem;
+  --ui-radius-lg: 0.75rem;
+  --ui-radius-full: 9999px;
+
+  --ui-font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --ui-font-size-xs: 0.75rem;
+  --ui-font-size-sm: 0.875rem;
+  --ui-font-size-md: 1rem;
+  --ui-font-size-lg: 1.125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
