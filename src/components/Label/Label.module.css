@@ -4,7 +4,8 @@
   gap: var(--ui-space-1);
   font-family: var(--ui-font-sans);
   font-size: var(--ui-font-size-sm);
-  font-weight: 600;
+  font-weight: 650;
+  letter-spacing: -0.01em;
   color: var(--ui-color-text);
   cursor: pointer;
 }
@@ -16,4 +17,5 @@
 
 .required {
   color: var(--ui-color-danger);
+  font-weight: 700;
 }

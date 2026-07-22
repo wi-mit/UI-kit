@@ -1,12 +1,11 @@
 .page {
   width: 100%;
-  max-width: 42rem;
+  max-width: 44rem;
   margin: 0;
   padding: 0 0 4rem;
-  color: #0a0a0a;
+  color: var(--ui-color-text);
   font-family:
     Inter,
-    "IBM Plex Sans",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -15,40 +14,47 @@
 }
 
 .header {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--ui-color-border);
 }
 
 .eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  margin: 0 0 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #71717a;
+  color: var(--ui-color-primary);
 }
 
 .title {
   margin: 0;
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  font-size: 2.35rem;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 .description {
-  margin: 0.75rem 0 0;
+  margin: 0.7rem 0 0;
   max-width: 36rem;
-  font-size: 1.0625rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #52525b;
+  color: var(--ui-color-text-muted);
 }
 
 .previewShell {
-  margin-top: 1.5rem;
-  border: 1px solid #e5e5e5;
-  border-radius: 0.75rem;
-  background: #ffffff;
+  position: relative;
+  margin-top: 1.35rem;
+  border: 1px solid var(--ui-color-border);
+  border-radius: 0.3rem;
+  background: var(--ui-color-surface);
   overflow: hidden;
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .previewShell :global(.sbdocs-preview) {
@@ -60,7 +66,30 @@
 
 .previewShell :global(.docs-story) {
   padding: 3rem 1.5rem !important;
-  background: #ffffff !important;
+  background: transparent !important;
+  min-height: 12rem;
+  display: grid !important;
+  place-items: center !important;
+}
+
+.previewShell :global(.docblock-code-toggle) {
+  position: absolute !important;
+  right: 0.75rem !important;
+  bottom: 0.75rem !important;
+  border: 1px solid var(--ui-color-border-strong) !important;
+  border-radius: 0.3rem !important;
+  background: var(--ui-color-surface) !important;
+  color: var(--ui-color-text) !important;
+  font-weight: 650 !important;
+  font-size: 0.75rem !important;
+  box-shadow: var(--ui-shadow-sm) !important;
+  text-decoration: none !important;
+}
+
+.previewShell :global(.docblock-code-toggle):hover {
+  border-color: var(--ui-color-primary) !important;
+  color: var(--ui-color-on-soft) !important;
+  background: var(--ui-color-primary-soft) !important;
 }
 
 .previewShell :global(pre),
@@ -68,31 +97,87 @@
   margin: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  border-top: 1px solid #e5e5e5 !important;
-  background: #f4f4f5 !important;
+  border-top: 1px solid var(--ui-color-border) !important;
+  background: #0f172a !important;
   box-shadow: none !important;
+  color: #e2e8f0 !important;
+}
+
+.previewShell :global(.docblock-source pre),
+.previewShell :global(.docblock-source code) {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.7 !important;
+}
+
+.previewShell :global(button[title="Copy"]),
+.previewShell :global(.docblock-source button) {
+  border: 0 !important;
+  border-radius: 0.3rem !important;
+  background: var(--ui-color-primary) !important;
+  color: var(--ui-color-primary-fg) !important;
+  font-weight: 650 !important;
+  font-size: 0.75rem !important;
+  padding: 0.35rem 0.65rem !important;
 }
 
 .section {
-  margin-top: 3rem;
+  margin-top: 2.75rem;
 }
 
 .heading {
-  margin: 0 0 1.15rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--ui-color-border);
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 .panel {
-  border: 1px solid #e5e5e5;
-  border-radius: 0.75rem;
+  border: 1px solid var(--ui-color-border);
+  border-radius: 0.3rem;
   overflow: hidden;
-  background: #fff;
+  background: var(--ui-color-surface);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .panel :global(.docblock-argstable) {
   margin: 0 !important;
+}
+
+.examples :global(.sbdocs-preview) {
+  margin: 0 0 1.25rem !important;
+  border: 1px solid var(--ui-color-border) !important;
+  border-radius: 0.3rem !important;
+  box-shadow: var(--ui-shadow-sm) !important;
+  overflow: hidden !important;
+  background: var(--ui-color-surface) !important;
+}
+
+.examples :global(.docs-story) {
+  background: transparent !important;
+  padding: 2.25rem 1.25rem !important;
+}
+
+.examples :global(h3),
+.examples :global(.sbdocs-h3) {
+  margin: 1.5rem 0 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ui-color-text) !important;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .previewShell :global(.docs-story),
+  .examples :global(.docs-story) {
+    padding: 1.5rem 1rem !important;
+    min-height: 9rem;
+  }
 }

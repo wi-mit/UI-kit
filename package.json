@@ -29,7 +29,8 @@
     "src/components",
     "src/styles",
     "src/utils",
-    "src/hooks"
+    "src/hooks",
+    "src/theme"
   ],
   "sideEffects": [
     "**/*.css"

@@ -2,12 +2,12 @@
   display: block;
   background: linear-gradient(
     90deg,
-    var(--ui-color-surface-muted) 0%,
-    var(--ui-color-surface-hover) 50%,
-    var(--ui-color-surface-muted) 100%
+    var(--ui-skeleton-from) 0%,
+    var(--ui-skeleton-via) 45%,
+    var(--ui-skeleton-from) 100%
   );
   background-size: 200% 100%;
-  animation: ui-skeleton 1.4s ease infinite;
+  animation: ui-skeleton 1.35s ease infinite;
 }
 
 .md {

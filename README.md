@@ -155,6 +155,29 @@ export function Example() {
 
 ---
 
+## Light & Dark mode
+
+Wrap your app with `ThemeProvider`:
+
+```tsx
+import { ThemeProvider } from "@mit-wi/ui";
+import "@mit-wi/ui/styles.css";
+
+<ThemeProvider defaultTheme="system">
+  <App />
+</ThemeProvider>
+```
+
+Toggle in code:
+
+```tsx
+const { theme, setTheme, toggleTheme } = useTheme();
+```
+
+In Storybook, use the **Theme** control in the top toolbar (Light / Dark).
+
+---
+
 ## Component docs (Storybook)
 
 Each component has a **Docs** tab styled like shadcn:

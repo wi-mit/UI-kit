@@ -1,12 +1,16 @@
 .root {
   display: grid;
   gap: var(--ui-space-3);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   font-family: var(--ui-font-sans);
   color: var(--ui-color-text);
 }
 
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--ui-space-3);
@@ -14,51 +18,63 @@
 
 .search {
   width: min(18rem, 100%);
-  min-height: 2.25rem;
-  padding: 0 var(--ui-space-3);
-  border: 1px solid var(--ui-color-border);
+  min-width: 0;
+  flex: 1 1 12rem;
+  min-height: 2.4rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--ui-color-border-strong);
   border-radius: var(--ui-radius-md);
   background: var(--ui-color-surface);
   color: inherit;
   font: inherit;
   font-size: var(--ui-font-size-sm);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .search:focus-visible {
-  outline: 2px solid var(--ui-color-focus);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--ui-color-primary);
+  box-shadow: var(--ui-ring);
 }
 
 .meta {
   font-size: var(--ui-font-size-sm);
   color: var(--ui-color-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .tableWrap {
+  width: 100%;
+  max-width: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--ui-color-border);
-  border-radius: var(--ui-radius-lg);
+  border-radius: var(--ui-radius-xl);
   background: var(--ui-color-surface);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .table {
   width: 100%;
+  min-width: 36rem;
   border-collapse: collapse;
   font-size: var(--ui-font-size-sm);
 }
 
 .th,
 .td {
-  padding: 0.75rem 0.9rem;
+  padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--ui-color-border);
   text-align: left;
   vertical-align: middle;
 }
 
 .th {
-  background: var(--ui-color-surface-muted);
-  font-weight: 650;
+  background: var(--ui-gradient-header);
+  font-weight: 700;
   white-space: nowrap;
+  color: var(--ui-color-text);
 }
 
 .sortBtn {
@@ -69,13 +85,13 @@
   background: transparent;
   color: inherit;
   font: inherit;
-  font-weight: 650;
+  font-weight: 700;
   cursor: pointer;
   padding: 0;
 }
 
 .sortBtn:hover {
-  color: var(--ui-color-primary);
+  color: var(--ui-color-primary-hover);
 }
 
 .checkboxCell {
@@ -83,7 +99,7 @@
 }
 
 .empty {
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   text-align: center;
   color: var(--ui-color-text-muted);
 }
@@ -98,4 +114,30 @@
 
 .right {
   text-align: right;
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+    flex: none;
+  }
+
+  .meta {
+    white-space: normal;
+  }
+
+  .th,
+  .td {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .table {
+    min-width: 28rem;
+    font-size: 0.8125rem;
+  }
 }

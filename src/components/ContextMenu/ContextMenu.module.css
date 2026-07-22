@@ -1,17 +1,20 @@
 .root {
   display: inline-block;
+  max-width: 100%;
 }
 
 .menu {
   position: fixed;
   z-index: 1100;
-  min-width: 11rem;
-  padding: var(--ui-space-1);
+  min-width: min(12rem, calc(100vw - 1rem));
+  max-width: min(20rem, calc(100vw - 1rem));
+  padding: 0.35rem;
   border: 1px solid var(--ui-color-border);
-  border-radius: var(--ui-radius-md);
+  border-radius: var(--ui-radius-lg);
   background: var(--ui-color-surface);
-  box-shadow: 0 12px 28px rgb(0 0 0 / 14%);
+  box-shadow: var(--ui-shadow-lg);
   font-family: var(--ui-font-sans);
+  animation: ui-menu-in 120ms ease;
 }
 
 .item {
@@ -20,20 +23,22 @@
   justify-content: space-between;
   gap: var(--ui-space-4);
   width: 100%;
-  padding: 0.45rem 0.65rem;
+  padding: 0.5rem 0.7rem;
   border: 0;
-  border-radius: 0.35rem;
+  border-radius: var(--ui-radius-sm);
   background: transparent;
   color: var(--ui-color-text);
   font: inherit;
   font-size: var(--ui-font-size-sm);
+  font-weight: 500;
   text-align: left;
   cursor: pointer;
 }
 
 .item:hover:not(:disabled),
 .item:focus-visible {
-  background: var(--ui-color-surface-hover);
+  background: var(--ui-color-primary-soft);
+  color: var(--ui-color-primary-hover);
   outline: none;
 }
 
@@ -46,13 +51,41 @@
   color: var(--ui-color-danger);
 }
 
+.danger:hover:not(:disabled),
+.danger:focus-visible {
+  background: var(--ui-color-danger-soft);
+  color: var(--ui-color-danger-hover);
+}
+
 .shortcut {
   color: var(--ui-color-text-muted);
   font-size: var(--ui-font-size-xs);
+  font-weight: 500;
 }
 
 .separator {
   height: 1px;
-  margin: var(--ui-space-1) 0;
+  margin: 0.3rem 0.25rem;
   background: var(--ui-color-border);
+}
+
+@keyframes ui-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .menu {
+    min-width: min(14rem, calc(100vw - 1rem));
+  }
+
+  .shortcut {
+    display: none;
+  }
 }

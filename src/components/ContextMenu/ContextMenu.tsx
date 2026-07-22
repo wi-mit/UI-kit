@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { cx } from "@/utils/cx";
 import type { ContextMenuProps } from "./ContextMenu.types";
@@ -6,9 +6,31 @@ import styles from "./ContextMenu.module.css";
 
 type Point = { x: number; y: number };
 
+function clampMenuPosition(
+  point: Point,
+  menu: HTMLDivElement,
+): Point {
+  const padding = 8;
+  const { width, height } = menu.getBoundingClientRect();
+  const maxX = window.innerWidth - width - padding;
+  const maxY = window.innerHeight - height - padding;
+  return {
+    x: Math.max(padding, Math.min(point.x, maxX)),
+    y: Math.max(padding, Math.min(point.y, maxY)),
+  };
+}
+
 export function ContextMenu({ items, children, className }: ContextMenuProps) {
   const [point, setPoint] = useState<Point | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!point || !menuRef.current) return;
+    const next = clampMenuPosition(point, menuRef.current);
+    if (next.x !== point.x || next.y !== point.y) {
+      setPoint(next);
+    }
+  }, [point]);
 
   useEffect(() => {
     if (!point) return;
@@ -21,12 +43,15 @@ export function ContextMenu({ items, children, className }: ContextMenuProps) {
         setPoint(null);
       }
     };
+    const onResize = () => setPoint(null);
 
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("mousedown", onPointerDown);
+    window.addEventListener("resize", onResize);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("mousedown", onPointerDown);
+      window.removeEventListener("resize", onResize);
     };
   }, [point]);
 
@@ -49,7 +74,11 @@ export function ContextMenu({ items, children, className }: ContextMenuProps) {
             >
               {items.map((item) =>
                 item.separator ? (
-                  <div key={item.key} className={styles.separator} role="separator" />
+                  <div
+                    key={item.key}
+                    className={styles.separator}
+                    role="separator"
+                  />
                 ) : (
                   <button
                     key={item.key}

@@ -2,7 +2,8 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgb(17 24 39 / 45%);
+  background: var(--ui-color-overlay);
+  backdrop-filter: blur(2px);
 }
 
 .panel {
@@ -13,19 +14,25 @@
   display: flex;
   flex-direction: column;
   width: min(24rem, 100%);
+  max-width: 100%;
+  border: 1px solid var(--ui-color-border);
   background: var(--ui-color-surface);
   color: var(--ui-color-text);
   font-family: var(--ui-font-sans);
-  box-shadow: 0 20px 40px rgb(0 0 0 / 18%);
+  box-shadow: var(--ui-shadow-lg);
 }
 
 .right {
   right: 0;
+  border-right: 0;
+  border-radius: var(--ui-radius-xl) 0 0 var(--ui-radius-xl);
   animation: ui-drawer-in-right 180ms ease;
 }
 
 .left {
   left: 0;
+  border-left: 0;
+  border-radius: 0 var(--ui-radius-xl) var(--ui-radius-xl) 0;
   animation: ui-drawer-in-left 180ms ease;
 }
 
@@ -34,22 +41,25 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--ui-space-3);
-  padding: var(--ui-space-4);
+  padding: 1.15rem;
   border-bottom: 1px solid var(--ui-color-border);
+  background: var(--ui-gradient-surface);
 }
 
 .title {
   margin: 0;
-  font-size: var(--ui-font-size-lg);
+  font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.3;
+  overflow-wrap: anywhere;
 }
 
 .description {
-  margin: var(--ui-space-1) 0 0;
+  margin: 0.3rem 0 0;
   color: var(--ui-color-text-muted);
   font-size: var(--ui-font-size-sm);
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .close {
@@ -67,24 +77,28 @@
 }
 
 .close:hover {
-  background: var(--ui-color-surface-hover);
-  color: var(--ui-color-text);
+  background: var(--ui-color-primary-soft);
+  color: var(--ui-color-primary-hover);
 }
 
 .body {
   flex: 1;
   overflow: auto;
-  padding: var(--ui-space-4);
+  padding: 1.15rem;
   font-size: var(--ui-font-size-sm);
-  line-height: 1.5;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  -webkit-overflow-scrolling: touch;
 }
 
 .footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--ui-space-2);
-  padding: var(--ui-space-4);
+  padding: 1.15rem;
   border-top: 1px solid var(--ui-color-border);
+  background: var(--ui-color-surface-muted);
 }
 
 @keyframes ui-drawer-in-right {
@@ -102,5 +116,25 @@
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .right,
+  .left {
+    border-radius: 0;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer > * {
+    width: 100%;
   }
 }

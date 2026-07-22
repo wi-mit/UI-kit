@@ -619,4 +619,58 @@ import { Button } from "@/components/ui/Button"`,
       },
     ],
   },
+  Theme: {
+    name: "Theme",
+    cliName: "theme",
+    description: "Light and dark mode provider for the UI kit.",
+    importCode: `import { ThemeProvider, useTheme } from "@mit-wi/ui"
+import "@mit-wi/ui/styles.css"`,
+    exampleCode: `<ThemeProvider defaultTheme="system">
+  <App />
+</ThemeProvider>`,
+    manualFiles: [
+      "src/theme/ThemeProvider.tsx",
+      "src/theme/index.ts",
+      "src/styles/tokens.css",
+    ],
+    api: [
+      {
+        name: "ThemeProvider",
+        description:
+          "The `ThemeProvider` applies light/dark tokens and persists the preference.",
+        props: [
+          {
+            prop: "defaultTheme",
+            type: '"light" | "dark" | "system"',
+            defaultValue: '"system"',
+          },
+          {
+            prop: "storageKey",
+            type: "string",
+            defaultValue: '"uae-ui-theme"',
+          },
+          { prop: "children", type: "ReactNode", defaultValue: "-" },
+        ],
+      },
+      {
+        name: "useTheme",
+        description:
+          "The `useTheme` hook returns `{ theme, preference, setTheme, toggleTheme }`.",
+        props: [
+          { prop: "theme", type: '"light" | "dark"', defaultValue: "-" },
+          {
+            prop: "preference",
+            type: '"light" | "dark" | "system"',
+            defaultValue: "-",
+          },
+          {
+            prop: "setTheme",
+            type: "(preference) => void",
+            defaultValue: "-",
+          },
+          { prop: "toggleTheme", type: "() => void", defaultValue: "-" },
+        ],
+      },
+    ],
+  },
 };

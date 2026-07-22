@@ -3,44 +3,51 @@
   align-items: center;
   justify-content: center;
   gap: var(--ui-space-2);
+  max-width: 100%;
   border: 1px solid transparent;
   border-radius: var(--ui-radius-md);
   font-family: var(--ui-font-sans);
   font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.2;
   cursor: pointer;
   transition:
-    background-color 150ms ease,
-    border-color 150ms ease,
-    color 150ms ease,
-    opacity 150ms ease;
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
 }
 
 .root:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .root:focus-visible {
-  outline: 2px solid var(--ui-color-focus);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--ui-ring);
 }
 
 .sm {
   min-height: 2rem;
-  padding: 0 var(--ui-space-3);
+  padding: 0 0.8rem;
   font-size: var(--ui-font-size-sm);
+  border-radius: var(--ui-radius-sm);
 }
 
 .md {
   min-height: 2.5rem;
-  padding: 0 var(--ui-space-4);
+  padding: 0 1.05rem;
   font-size: var(--ui-font-size-md);
 }
 
 .lg {
   min-height: 3rem;
-  padding: 0 var(--ui-space-5);
+  padding: 0 1.25rem;
   font-size: var(--ui-font-size-lg);
 }
 
@@ -49,22 +56,31 @@
 }
 
 .primary {
-  background: var(--ui-color-primary);
+  background: var(--ui-gradient-primary);
   color: var(--ui-color-primary-fg);
+  box-shadow: var(--ui-shadow-primary);
 }
 
 .primary:hover:not(:disabled) {
-  background: var(--ui-color-primary-hover);
+  background: var(--ui-gradient-primary-hover);
+  transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .secondary {
   background: var(--ui-color-surface);
   color: var(--ui-color-text);
-  border-color: var(--ui-color-border);
+  border-color: var(--ui-color-border-strong);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .secondary:hover:not(:disabled) {
-  background: var(--ui-color-surface-hover);
+  background: var(--ui-color-surface-muted);
+  border-color: var(--ui-color-border-strong);
 }
 
 .ghost {
@@ -73,16 +89,19 @@
 }
 
 .ghost:hover:not(:disabled) {
-  background: var(--ui-color-surface-hover);
+  background: var(--ui-color-primary-soft);
+  color: var(--ui-color-on-soft);
 }
 
 .danger {
-  background: var(--ui-color-danger);
+  background: var(--ui-gradient-danger);
   color: var(--ui-color-danger-fg);
+  box-shadow: var(--ui-shadow-danger);
 }
 
 .danger:hover:not(:disabled) {
-  background: var(--ui-color-danger-hover);
+  background: var(--ui-gradient-danger-hover);
+  transform: translateY(-1px);
 }
 
 .loading {

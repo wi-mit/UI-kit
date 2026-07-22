@@ -3,11 +3,17 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border: 2px solid var(--ui-color-surface);
   border-radius: var(--ui-radius-full);
-  background: var(--ui-color-surface-muted);
-  color: var(--ui-color-text-muted);
+  background: linear-gradient(
+    135deg,
+    var(--ui-color-primary) 0%,
+    var(--ui-color-info) 100%
+  );
+  color: var(--ui-color-primary-fg);
   font-family: var(--ui-font-sans);
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--ui-color-border), var(--ui-shadow-sm);
   user-select: none;
 }
 
@@ -18,14 +24,14 @@
 }
 
 .md {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.6rem;
+  height: 2.6rem;
   font-size: var(--ui-font-size-sm);
 }
 
 .lg {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.35rem;
+  height: 3.35rem;
   font-size: var(--ui-font-size-md);
 }
 
@@ -37,4 +43,5 @@
 
 .fallback {
   text-transform: uppercase;
+  letter-spacing: 0.02em;
 }

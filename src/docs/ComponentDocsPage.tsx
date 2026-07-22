@@ -30,16 +30,18 @@ export function ComponentDocsPage({ componentName }: ComponentDocsPageProps) {
       <Usage importCode={doc.importCode} exampleCode={doc.exampleCode} />
       <ApiReference components={doc.api} />
 
-      <section className={styles.section}>
+      <section className={styles.section} id="controls">
         <h2 className={styles.heading}>Controls</h2>
         <div className={styles.panel}>
           <Controls />
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} id="examples">
         <h2 className={styles.heading}>Examples</h2>
-        <Stories includePrimary={false} />
+        <div className={styles.examples}>
+          <Stories includePrimary={false} />
+        </div>
       </section>
     </div>
   );
