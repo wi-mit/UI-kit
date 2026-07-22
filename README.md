@@ -1,4 +1,4 @@
-# @uae-wi/ui
+# @mit-wi/ui
 
 React UI kit with Storybook docs and a **shadcn-style CLI** so you can add only the components you need.
 
@@ -50,7 +50,7 @@ From your other React project:
 node ../UI-kit/cli/index.js init
 
 # After publish:
-npx @uae-wi/ui init
+npx @mit-wi/ui init
 ```
 
 This creates:
@@ -67,8 +67,8 @@ node ../UI-kit/cli/index.js add button
 node ../UI-kit/cli/index.js add alert badge dialog
 
 # After publish:
-npx @uae-wi/ui add button
-npx @uae-wi/ui add alert badge dialog
+npx @mit-wi/ui add button
+npx @mit-wi/ui add alert badge dialog
 ```
 
 List everything:
@@ -76,10 +76,26 @@ List everything:
 ```bash
 node ../UI-kit/cli/index.js list
 # or
-npx @uae-wi/ui list
+npx @mit-wi/ui list
 ```
 
-#### 3. Import tokens once
+#### 3. Update only components you use
+
+Your app keeps a list in `components.json` → `installed`.
+
+```bash
+# Update one component
+npx @mit-wi/ui@latest update button
+
+# Update all installed components (not the full library)
+npx @mit-wi/ui@latest update
+
+# See what this app uses
+npx @mit-wi/ui status
+```
+
+#### 4. Import tokens once
+
 
 In your app entry (`main.tsx` / `App.tsx`):
 
@@ -87,11 +103,11 @@ In your app entry (`main.tsx` / `App.tsx`):
 import "./styles/tokens.css";
 ```
 
-#### 4. Use the component
+#### 5. Use the component
 
 ```tsx
-import { Button } from "./components-wi/ui/Button";
-import { Badge } from "./components-wi/ui/Badge";
+import { Button } from "./components/ui/Button";
+import { Badge } from "./components/ui/Badge";
 
 export function Example() {
   return (
@@ -106,14 +122,14 @@ export function Example() {
 Default output folders (from `components.json`):
 
 ```text
-src/components-wi/ui/<Component>/
+src/components/ui/<Component>/
 src/lib/utils.ts
 src/styles/tokens.css
 ```
 
 ---
 
-### B) Full package install — import from `@uae-wi/ui`
+### B) Full package install — import from `@mit-wi/ui`
 
 Installs the whole library (all components).
 
@@ -124,7 +140,7 @@ In the other project `package.json`:
 ```json
 {
   "dependencies": {
-    "@uae-wi/ui": "file:../UI-kit"
+    "@mit-wi/ui": "file:../UI-kit"
   }
 }
 ```
@@ -140,8 +156,8 @@ npm install
 #### Usage
 
 ```tsx
-import "@uae-wi/ui/styles.css";
-import { Button, Badge, Dialog } from "@uae-wi/ui";
+import "@mit-wi/ui/styles.css";
+import { Button, Badge, Dialog } from "@mit-wi/ui";
 
 export function Example() {
   return (
@@ -183,7 +199,7 @@ In Storybook, use the **Theme** control in the top toolbar (Light / Dark).
 Each component has a **Docs** tab styled like shadcn:
 
 1. Live preview  
-2. **Installation** — Command (`npx @uae-wi/ui add …`) / Manual  
+2. **Installation** — Command (`npx @mit-wi/ui add …`) / Manual  
 3. **Usage** — import + example code  
 4. **API Reference** — props table  
 
@@ -219,15 +235,15 @@ npm run cli -- help
 
 ```bash
 # in your app
-npx @uae-wi/ui init
-npx @uae-wi/ui add button
+npx @mit-wi/ui init
+npx @mit-wi/ui add button
 ```
 
 Then:
 
 ```tsx
 import "./styles/tokens.css";
-import { Button } from "./components-wi/ui/Button";
+import { Button } from "./components/ui/Button";
 
 <Button variant="primary" size="md">Continue</Button>
 ```
