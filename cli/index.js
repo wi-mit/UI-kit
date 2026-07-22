@@ -67,7 +67,7 @@ function getConfig() {
   const configPath = join(process.cwd(), "components.json");
   if (!existsSync(configPath)) {
     console.error(
-      "Missing components.json. Run `npx @uae/ui init` in your project first.",
+      "Missing components.json. Run `npx @uae-wi/ui init` in your project first.",
     );
     process.exit(1);
   }
@@ -81,7 +81,7 @@ function cmdInit() {
   const config = {
     style: registry.style,
     aliases: registry.aliases,
-    registry: "@uae/ui",
+    registry: "@uae-wi/ui",
   };
 
   writeJson(configPath, config);
@@ -98,10 +98,10 @@ function cmdInit() {
     console.log(`✔ Added ${relative(process.cwd(), destination)}`);
   }
 
-  console.log("\nInitialized @uae/ui.");
+  console.log("\nInitialized @uae-wi/ui.");
   console.log("Import tokens once in your app entry:");
   console.log(`  import "./${config.aliases.styles}/tokens.css";`);
-  console.log("\nNext: npx @uae/ui add button");
+  console.log("\nNext: npx @uae-wi/ui add button");
 }
 
 function cmdList() {
@@ -116,7 +116,7 @@ function addComponent(name, config, registry) {
   const key = name.toLowerCase();
   const entry = registry.components[key];
   if (!entry) {
-    console.error(`Unknown component "${name}". Run: npx @uae/ui list`);
+    console.error(`Unknown component "${name}". Run: npx @uae-wi/ui list`);
     process.exit(1);
   }
 
@@ -151,7 +151,7 @@ function addComponent(name, config, registry) {
 
 function cmdAdd(names) {
   if (!names.length) {
-    console.error("Usage: npx @uae/ui add <component> [component...]");
+    console.error("Usage: npx @uae-wi/ui add <component> [component...]");
     process.exit(1);
   }
   const config = getConfig();
@@ -162,16 +162,16 @@ function cmdAdd(names) {
 }
 
 function printHelp() {
-  console.log(`@uae/ui — shadcn-style component CLI
+  console.log(`@uae-wi/ui — shadcn-style component CLI
 
 Usage:
-  npx @uae/ui init
-  npx @uae/ui list
-  npx @uae/ui add <component> [component...]
+  npx @uae-wi/ui init
+  npx @uae-wi/ui list
+  npx @uae-wi/ui add <component> [component...]
 
 Examples:
-  npx @uae/ui add button
-  npx @uae/ui add alert badge dialog
+  npx @uae-wi/ui add button
+  npx @uae-wi/ui add alert badge dialog
 `);
 }
 

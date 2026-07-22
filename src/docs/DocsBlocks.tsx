@@ -5,10 +5,10 @@ import styles from "./docs.module.css";
 type PackageManager = "npm" | "pnpm" | "yarn" | "bun";
 
 const installCommands: Record<PackageManager, (name: string) => string> = {
-  npm: (name) => `npx @uae/ui@latest add ${name}`,
-  pnpm: (name) => `pnpm dlx @uae/ui@latest add ${name}`,
-  yarn: (name) => `yarn dlx @uae/ui@latest add ${name}`,
-  bun: (name) => `bunx @uae/ui@latest add ${name}`,
+  npm: (name) => `npx @uae-wi/ui@latest add ${name}`,
+  pnpm: (name) => `pnpm dlx @uae-wi/ui@latest add ${name}`,
+  yarn: (name) => `yarn dlx @uae-wi/ui@latest add ${name}`,
+  bun: (name) => `bunx @uae-wi/ui@latest add ${name}`,
 };
 
 function CopyButton({ value }: { value: string }) {

@@ -1,6 +1,6 @@
 {
   "$schema": "./registry.schema.json",
-  "name": "@uae/ui",
+  "name": "@mit-wi/ui",
   "style": "css-modules",
   "aliases": {
     "components": "src/components/ui",

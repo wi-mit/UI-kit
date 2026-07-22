@@ -4,9 +4,9 @@
   justify-content: center;
   gap: var(--ui-space-2);
   border: 1px solid transparent;
-  border-radius: var(--ui-radius-md);
+  border-radius: var(--ui-radius-lg);
   font-family: var(--ui-font-sans);
-  font-weight: 600;
+  font-weight: 200;
   line-height: 1.2;
   cursor: pointer;
   transition:

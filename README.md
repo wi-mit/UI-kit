@@ -1,4 +1,4 @@
-# @uae/ui
+# @uae-wi/ui
 
 React UI kit with Storybook docs and a **shadcn-style CLI** so you can add only the components you need.
 
@@ -50,7 +50,7 @@ From your other React project:
 node ../UI-kit/cli/index.js init
 
 # After publish:
-npx @uae/ui init
+npx @uae-wi/ui init
 ```
 
 This creates:
@@ -67,8 +67,8 @@ node ../UI-kit/cli/index.js add button
 node ../UI-kit/cli/index.js add alert badge dialog
 
 # After publish:
-npx @uae/ui add button
-npx @uae/ui add alert badge dialog
+npx @uae-wi/ui add button
+npx @uae-wi/ui add alert badge dialog
 ```
 
 List everything:
@@ -76,7 +76,7 @@ List everything:
 ```bash
 node ../UI-kit/cli/index.js list
 # or
-npx @uae/ui list
+npx @uae-wi/ui list
 ```
 
 #### 3. Import tokens once
@@ -90,8 +90,8 @@ import "./styles/tokens.css";
 #### 4. Use the component
 
 ```tsx
-import { Button } from "./components/ui/Button";
-import { Badge } from "./components/ui/Badge";
+import { Button } from "./components-wi/ui/Button";
+import { Badge } from "./components-wi/ui/Badge";
 
 export function Example() {
   return (
@@ -106,14 +106,14 @@ export function Example() {
 Default output folders (from `components.json`):
 
 ```text
-src/components/ui/<Component>/
+src/components-wi/ui/<Component>/
 src/lib/utils.ts
 src/styles/tokens.css
 ```
 
 ---
 
-### B) Full package install — import from `@uae/ui`
+### B) Full package install — import from `@uae-wi/ui`
 
 Installs the whole library (all components).
 
@@ -124,7 +124,7 @@ In the other project `package.json`:
 ```json
 {
   "dependencies": {
-    "@uae/ui": "file:../UI-kit"
+    "@uae-wi/ui": "file:../UI-kit"
   }
 }
 ```
@@ -140,8 +140,8 @@ npm install
 #### Usage
 
 ```tsx
-import "@uae/ui/styles.css";
-import { Button, Badge, Dialog } from "@uae/ui";
+import "@uae-wi/ui/styles.css";
+import { Button, Badge, Dialog } from "@uae-wi/ui";
 
 export function Example() {
   return (
@@ -160,7 +160,7 @@ export function Example() {
 Each component has a **Docs** tab styled like shadcn:
 
 1. Live preview  
-2. **Installation** — Command (`npx @uae/ui add …`) / Manual  
+2. **Installation** — Command (`npx @uae-wi/ui add …`) / Manual  
 3. **Usage** — import + example code  
 4. **API Reference** — props table  
 
@@ -196,15 +196,15 @@ npm run cli -- help
 
 ```bash
 # in your app
-npx @uae/ui init
-npx @uae/ui add button
+npx @uae-wi/ui init
+npx @uae-wi/ui add button
 ```
 
 Then:
 
 ```tsx
 import "./styles/tokens.css";
-import { Button } from "./components/ui/Button";
+import { Button } from "./components-wi/ui/Button";
 
 <Button variant="primary" size="md">Continue</Button>
 ```
