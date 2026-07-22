@@ -1,9 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { createDocsPage } from "@/docs";
 import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      page: createDocsPage("Button"),
+    },
+  },
   args: {
     children: "Button",
     variant: "primary",

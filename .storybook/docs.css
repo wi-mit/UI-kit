@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.sbdocs.sbdocs-wrapper {
+  background: #ffffff !important;
+  padding: 2rem 2rem 4rem !important;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif !important;
+}
+
+.sbdocs.sbdocs-content {
+  max-width: 42rem !important;
+}
+
+.sbdocs .sbdocs-preview {
+  border-radius: 0.75rem !important;
+  border-color: #e5e5e5 !important;
+  box-shadow: none !important;
+}
+
+.sbdocs .docblock-argstable {
+  margin: 0 !important;
+}
+
+.sbdocs .docblock-argstable-head th,
+.sbdocs .docblock-argstable-body td {
+  border-color: #e5e5e5 !important;
+}
+
+.sbdocs .docblock-source {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 0.75rem !important;
+  background: #f4f4f5 !important;
+  box-shadow: none !important;
+}
+
+.sbdocs pre,
+.sbdocs code,
+.sbdocs pre code {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace !important;
+}
+
+.sbdocs pre {
+  font-size: 0.8125rem !important;
+  line-height: 1.7 !important;
+}
+
+.sbdocs .toc-list > li a {
+  color: #71717a !important;
+  font-size: 0.8125rem !important;
+}
+
+.sbdocs .toc-list > li a[data-active="true"],
+.sbdocs .toc-list > li a:hover {
+  color: #18181b !important;
+}

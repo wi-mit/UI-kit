@@ -9,6 +9,7 @@
   "exclude": [
     "dist",
     "node_modules",
+    "src/docs",
     "src/**/*.test.tsx",
     "src/**/*.test.ts",
     "src/**/*.stories.tsx",

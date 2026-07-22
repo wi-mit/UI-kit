@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { createDocsPage } from "@/docs";
 import { Badge } from "../Badge";
 import { Table } from "./Table";
 
@@ -18,6 +19,12 @@ const data: User[] = [
 const meta: Meta<typeof Table<User>> = {
   title: "Components/Table",
   component: Table,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      page: createDocsPage("Table"),
+    },
+  },
 };
 
 export default meta;

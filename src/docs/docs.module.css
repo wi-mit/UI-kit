@@ -1,0 +1,380 @@
+.section {
+  margin-top: 3rem;
+  text-align: left;
+  width: 100%;
+}
+
+.sectionTitle {
+  margin: 0 0 1.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0a0a0a;
+  line-height: 1.2;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1rem;
+}
+
+.tab,
+.tabActive {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0;
+  margin-bottom: -1px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #737373;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: #171717;
+}
+
+.tabActive {
+  color: #0a0a0a;
+  border-bottom-color: #0a0a0a;
+  font-weight: 600;
+}
+
+.installPanel {
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  background: #f4f4f5;
+  overflow: hidden;
+}
+
+.installToolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.4rem 0.35rem 0.7rem;
+  border-bottom: 1px solid #e4e4e7;
+  background: #f4f4f5;
+}
+
+.terminalIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #71717a;
+  flex-shrink: 0;
+}
+
+.pmGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.pm,
+.pmActive {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0.375rem;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #71717a;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pm:hover {
+  color: #18181b;
+}
+
+.pmActive {
+  background: #ffffff;
+  color: #18181b;
+  box-shadow:
+    0 0 0 1px #e4e4e7,
+    0 1px 2px rgb(0 0 0 / 4%);
+}
+
+.installToolbar .copyBtn {
+  position: static;
+  opacity: 1;
+  border: 1px solid #e4e4e7;
+  background: #ffffff;
+}
+
+.installToolbar .copyBtn:hover {
+  background: #fafafa;
+}
+
+.installCommand {
+  margin: 0;
+  padding: 1rem 1.15rem 1.15rem;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace !important;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #18181b;
+  background: #f4f4f5;
+  overflow-x: auto;
+}
+
+.installCommand code {
+  font: inherit !important;
+  white-space: nowrap;
+}
+
+.manualPanel {
+  display: grid;
+  gap: 1rem;
+}
+
+.manualIntro {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+.fileCard {
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1rem 1.1rem;
+}
+
+.fileTitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.fileList {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+  color: #3f3f46;
+  font-size: 0.875rem;
+}
+
+.fileList code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  background: #f4f4f5;
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.35rem;
+}
+
+.usageStack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.codeBlock {
+  position: relative;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.5rem;
+  background: #f4f4f5;
+  overflow: hidden;
+}
+
+.codeBlock .copyBtn {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.codeBlock:hover .copyBtn,
+.codeBlock .copyBtn:focus-visible {
+  opacity: 1;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: 0;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #71717a;
+  cursor: pointer;
+}
+
+.copyBtn:hover {
+  background: rgb(0 0 0 / 5%);
+  color: #18181b;
+}
+
+.copyBtn .checkIcon {
+  display: none;
+}
+
+.copyBtn[data-copied="true"] .copyIcon {
+  display: none;
+}
+
+.copyBtn[data-copied="true"] .checkIcon {
+  display: block;
+  color: #16a34a;
+}
+
+.pre {
+  margin: 0 !important;
+  padding: 1rem 2.75rem 1rem 1rem !important;
+  overflow-x: auto;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.7 !important;
+  color: #18181b !important;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.code {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.tokenKeyword {
+  color: #7c3aed;
+}
+
+.tokenString {
+  color: #057a55;
+}
+
+.tokenTag {
+  color: #0369a1;
+}
+
+.tokenPunct {
+  color: #52525b;
+}
+
+.tokenComment {
+  color: #a1a1aa;
+}
+
+.tokenPlain {
+  color: #18181b;
+}
+
+.apiBlock {
+  margin-top: 2rem;
+}
+
+.apiBlock:first-of-type {
+  margin-top: 0.25rem;
+}
+
+.apiTitle {
+  margin: 0 0 0.45rem;
+  font-size: 1.125rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.apiDescription {
+  margin: 0 0 1rem;
+  color: #52525b;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.apiDescription code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  background: #f4f4f5;
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.35rem;
+  color: #18181b;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-top: 1px solid #e5e5e5;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.9rem 0.75rem 0.9rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.table th {
+  color: #71717a;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.propName {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #18181b;
+  background: transparent;
+  padding: 0;
+}
+
+.typeValue,
+.defaultValue {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: #3f3f46;
+  background: #f4f4f5;
+  border-radius: 0.3rem;
+  padding: 0.15rem 0.4rem;
+  word-break: break-word;
+}

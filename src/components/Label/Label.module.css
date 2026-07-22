@@ -1,0 +1,19 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  font-family: var(--ui-font-sans);
+  font-size: var(--ui-font-size-sm);
+  font-weight: 600;
+  color: var(--ui-color-text);
+  cursor: pointer;
+}
+
+.root[data-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.required {
+  color: var(--ui-color-danger);
+}

@@ -1,0 +1,255 @@
+{
+  "$schema": "./registry.schema.json",
+  "name": "@uae/ui",
+  "style": "css-modules",
+  "aliases": {
+    "components": "src/components/ui",
+    "utils": "src/lib",
+    "styles": "src/styles"
+  },
+  "base": {
+    "files": [
+      {
+        "from": "src/styles/tokens.css",
+        "to": "styles/tokens.css"
+      },
+      {
+        "from": "src/utils/cx.ts",
+        "to": "lib/utils.ts"
+      }
+    ]
+  },
+  "components": {
+    "button": {
+      "name": "Button",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Button/Button.tsx",
+        "Button/Button.types.ts",
+        "Button/Button.module.css",
+        "Button/index.ts"
+      ]
+    },
+    "badge": {
+      "name": "Badge",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Badge/Badge.tsx",
+        "Badge/Badge.types.ts",
+        "Badge/Badge.module.css",
+        "Badge/index.ts"
+      ]
+    },
+    "card": {
+      "name": "Card",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Card/Card.tsx",
+        "Card/Card.types.ts",
+        "Card/Card.module.css",
+        "Card/index.ts"
+      ]
+    },
+    "input": {
+      "name": "Input",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Input/Input.tsx",
+        "Input/Input.types.ts",
+        "Input/Input.module.css",
+        "Input/index.ts"
+      ]
+    },
+    "table": {
+      "name": "Table",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Table/Table.tsx",
+        "Table/Table.types.ts",
+        "Table/Table.module.css",
+        "Table/index.ts"
+      ]
+    },
+    "label": {
+      "name": "Label",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Label/Label.tsx",
+        "Label/Label.types.ts",
+        "Label/Label.module.css",
+        "Label/index.ts"
+      ]
+    },
+    "textarea": {
+      "name": "Textarea",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Textarea/Textarea.tsx",
+        "Textarea/Textarea.types.ts",
+        "Textarea/Textarea.module.css",
+        "Textarea/index.ts"
+      ]
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Checkbox/Checkbox.tsx",
+        "Checkbox/Checkbox.types.ts",
+        "Checkbox/Checkbox.module.css",
+        "Checkbox/index.ts"
+      ]
+    },
+    "switch": {
+      "name": "Switch",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Switch/Switch.tsx",
+        "Switch/Switch.types.ts",
+        "Switch/Switch.module.css",
+        "Switch/index.ts"
+      ]
+    },
+    "alert": {
+      "name": "Alert",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Alert/Alert.tsx",
+        "Alert/Alert.types.ts",
+        "Alert/Alert.module.css",
+        "Alert/index.ts"
+      ]
+    },
+    "separator": {
+      "name": "Separator",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Separator/Separator.tsx",
+        "Separator/Separator.types.ts",
+        "Separator/Separator.module.css",
+        "Separator/index.ts"
+      ]
+    },
+    "avatar": {
+      "name": "Avatar",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Avatar/Avatar.tsx",
+        "Avatar/Avatar.types.ts",
+        "Avatar/Avatar.module.css",
+        "Avatar/index.ts"
+      ]
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Skeleton/Skeleton.tsx",
+        "Skeleton/Skeleton.types.ts",
+        "Skeleton/Skeleton.module.css",
+        "Skeleton/index.ts"
+      ]
+    },
+    "dialog": {
+      "name": "Dialog",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Dialog/Dialog.tsx",
+        "Dialog/Dialog.types.ts",
+        "Dialog/Dialog.module.css",
+        "Dialog/index.ts"
+      ],
+      "extraFiles": [
+        {
+          "from": "src/hooks/useControllableOpen.ts",
+          "to": "lib/useControllableOpen.ts"
+        }
+      ]
+    },
+    "select": {
+      "name": "Select",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Select/Select.tsx",
+        "Select/Select.types.ts",
+        "Select/Select.module.css",
+        "Select/index.ts"
+      ]
+    },
+    "context-menu": {
+      "name": "ContextMenu",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "ContextMenu/ContextMenu.tsx",
+        "ContextMenu/ContextMenu.types.ts",
+        "ContextMenu/ContextMenu.module.css",
+        "ContextMenu/index.ts"
+      ]
+    },
+    "data-table": {
+      "name": "DataTable",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "DataTable/DataTable.tsx",
+        "DataTable/DataTable.types.ts",
+        "DataTable/DataTable.module.css",
+        "DataTable/index.ts"
+      ]
+    },
+    "date-picker": {
+      "name": "DatePicker",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "DatePicker/DatePicker.tsx",
+        "DatePicker/DatePicker.types.ts",
+        "DatePicker/DatePicker.module.css",
+        "DatePicker/index.ts"
+      ]
+    },
+    "direction": {
+      "name": "Direction",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Direction/Direction.tsx",
+        "Direction/Direction.module.css",
+        "Direction/index.ts"
+      ]
+    },
+    "drawer": {
+      "name": "Drawer",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        "Drawer/Drawer.tsx",
+        "Drawer/Drawer.types.ts",
+        "Drawer/Drawer.module.css",
+        "Drawer/index.ts"
+      ],
+      "extraFiles": [
+        {
+          "from": "src/hooks/useControllableOpen.ts",
+          "to": "lib/useControllableOpen.ts"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  width: min(28rem, 100%);
+  padding: var(--ui-space-3) var(--ui-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  font-family: var(--ui-font-sans);
+  font-size: var(--ui-font-size-sm);
+  line-height: 1.45;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.body {
+  color: inherit;
+}
+
+.info {
+  background: #ecfeff;
+  border-color: #a5f3fc;
+  color: #155e75;
+}
+
+.success {
+  background: #ecfdf3;
+  border-color: #abefc6;
+  color: var(--ui-color-success);
+}
+
+.warning {
+  background: #fffaeb;
+  border-color: #fedf89;
+  color: var(--ui-color-warning);
+}
+
+.danger {
+  background: #fef3f2;
+  border-color: #fecdca;
+  color: var(--ui-color-danger);
+}
